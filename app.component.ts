@@ -1,13 +1,16 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { MyserviceService } from './myservice.service'; // Import the service
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'my-angular-app';
+  todaydate: any;
+
+  constructor(private myservice: MyserviceService) {
+    // Use the service method to fetch today's date
+    this.todaydate = this.myservice.showTodayDate();
+  }
 }

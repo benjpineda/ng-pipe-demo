@@ -1,0 +1,14 @@
+rm -rf node_modules
+rm package-lock.json
+npm install
+
+npm cache clean --force
+
+npm install
+
+npm install @rollup/rollup-darwin-arm64
+
+node -v
+npm -v
+
+npm install -g npm
